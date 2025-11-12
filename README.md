@@ -26,7 +26,7 @@ IntelliJ IDEA / Eclipse
 # Ejecución básica
 
 Clonar el repositorio
-git clone https://github.com/TU_USUARIO/BatallaNaval.git
+git clone https://github.com/MechLearn/BatallaNaval.git
 cd BatallaNaval
 Compilar con Maven
 mvn clean install
