@@ -1,0 +1,63 @@
+###
+###  PREPARAR EL TERRENO (ADMIN)
+### ==========================================
+
+### 1. Se Crean las Reglas del Juego (Modo Clásico)
+# Esto generará la Configuración con ID = 1
+POST http://localhost:8080/api/configs
+Content-Type: application/json
+
+{
+  "boardSize": 10,
+  "shipsAmount": 5
+}
+
+###
+###  LLEGAN LOS JUGADORES
+### ==========================================
+
+### 2. Se Registra al Anfitrion (Player 1)
+# Esto generara el Jugador con ID = 1
+POST http://localhost:8080/api/gamers/register
+Content-Type: application/json
+
+{
+  "nickname": "JoseValero",
+  "email": "valero@distrital.com",
+  "password": "123"
+}
+
+### 3. Se Registra al Retador (Player 2)
+# Esto generara el Jugador con ID = 2
+POST http://localhost:8080/api/gamers/register
+Content-Type: application/json
+
+{
+  "nickname": "mani",
+  "email": "mani@udistrital.com",
+  "password": "abc"
+}
+
+###
+### LA SALA DE GUERRA
+### ==========================================
+
+### 4. El Almirante crea la partida
+# Usará su ID (1) y la Configuración Clásica (1)
+POST http://localhost:8080/api/games/create
+Content-Type: application/json
+
+{
+  "hostId": 1,
+  "configId": 1
+}
+
+### 5. El Pirata se une a la batalla
+# Cambia el texto "PEGAR_CODIGO_AQUI" por el código que te dio el paso anterior.
+POST http://localhost:8080/api/games/join
+Content-Type: application/json
+
+{
+  "guestId": 2,
+  "gameId": "0d45fd41"
+}
