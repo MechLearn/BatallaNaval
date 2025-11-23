@@ -1,7 +1,7 @@
-package com.battlegames.batallanaval.business;
+package com.battlegames.batallanaval.sistema_jugador.business;
 
-import com.battlegames.batallanaval.models.Gamer;
-import com.battlegames.batallanaval.repositories.GamerRepository;
+import com.battlegames.batallanaval.sistema_jugador.models.Gamer;
+import com.battlegames.batallanaval.sistema_jugador.repositories.GamerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

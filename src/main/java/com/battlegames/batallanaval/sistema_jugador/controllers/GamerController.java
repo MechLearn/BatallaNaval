@@ -1,7 +1,7 @@
-package com.battlegames.batallanaval.controllers;
+package com.battlegames.batallanaval.sistema_jugador.controllers;
 
-import com.battlegames.batallanaval.business.GamerHandler;
-import com.battlegames.batallanaval.models.Gamer;
+import com.battlegames.batallanaval.sistema_jugador.business.GamerHandler;
+import com.battlegames.batallanaval.sistema_jugador.models.Gamer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

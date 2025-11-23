@@ -1,4 +1,4 @@
-package com.battlegames.batallanaval.models;
+package com.battlegames.batallanaval.sistema_jugador.models;
 
 import jakarta.persistence.*;
 
