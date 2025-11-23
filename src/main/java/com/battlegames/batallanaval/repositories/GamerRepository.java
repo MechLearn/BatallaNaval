@@ -9,9 +9,6 @@ import java.util.Optional;
 @Repository
 public interface GamerRepository extends JpaRepository<Gamer, Integer> {
 
-    // Buscar un jugador por su email (Para el Login)
-    Optional<Gamer> findByEmail(String email);
-
-    // Buscar un jugador por su nickname (Para ver si ya existe)
+    // Spring crea el código de esto automáticamente
     Optional<Gamer> findByNickname(String nickname);
 }

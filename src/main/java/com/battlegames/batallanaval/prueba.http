@@ -1,63 +1,46 @@
-###
-###  PREPARAR EL TERRENO (ADMIN)
-### ==========================================
+### PRUEBA DEL SISTEMA JUGADOR (SIN LOMBOK)
 
-### 1. Se Crean las Reglas del Juego (Modo Clásico)
-# Esto generará la Configuración con ID = 1
-POST http://localhost:8080/api/configs
-Content-Type: application/json
-
-{
-  "boardSize": 10,
-  "shipsAmount": 5
-}
-
-###
-###  LLEGAN LOS JUGADORES
-### ==========================================
-
-### 2. Se Registra al Anfitrion (Player 1)
-# Esto generara el Jugador con ID = 1
+### 1. Registrar un Usuario Normal
+# Esperamos: "Registro Exitoso"
 POST http://localhost:8080/api/gamers/register
 Content-Type: application/json
 
 {
-  "nickname": "JoseValero",
-  "email": "valero@distrital.com",
+  "nickname": "ComandantePepe",
   "password": "123"
 }
 
-### 3. Se Registra al Retador (Player 2)
-# Esto generara el Jugador con ID = 2
+### 2. Intentar registrar el mismo (Debe fallar)
+# Esperamos: "Error: El Nickname ya existe"
 POST http://localhost:8080/api/gamers/register
 Content-Type: application/json
 
 {
-  "nickname": "mani",
-  "email": "mani@udistrital.com",
-  "password": "abc"
+  "nickname": "ComandantePepe",
+  "password": "otra"
 }
 
-###
-### LA SALA DE GUERRA
-### ==========================================
-
-### 4. El Almirante crea la partida
-# Usará su ID (1) y la Configuración Clásica (1)
-POST http://localhost:8080/api/games/create
+### 3. Login Correcto
+# Esperamos: "Bienvenido ComandantePepe"
+POST http://localhost:8080/api/gamers/login
 Content-Type: application/json
 
 {
-  "hostId": 1,
-  "configId": 1
+  "nickname": "ComandantePepe",
+  "password": "123"
 }
 
-### 5. El Pirata se une a la batalla
-# Cambia el texto "PEGAR_CODIGO_AQUI" por el código que te dio el paso anterior.
-POST http://localhost:8080/api/games/join
+### 4. Login Incorrecto
+# Esperamos: "Error: Credenciales incorrectas"
+POST http://localhost:8080/api/gamers/login
 Content-Type: application/json
 
 {
-  "guestId": 2,
-  "gameId": "0d45fd41"
+  "nickname": "ComandantePepe",
+  "password": "ClaveFalsa"
 }
+
+### 5. Jugar como Invitado (NUEVO)
+# Esperamos: "Entraste como invitado: Guest_XXXX"
+POST http://localhost:8080/api/gamers/login-guest
+Content-Type: application/json
