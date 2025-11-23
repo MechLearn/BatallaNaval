@@ -16,7 +16,7 @@ public class GamerController {
 
     @PostMapping("/register")
     public String register(@RequestBody Gamer gamer) {
-        // Usamos los Getters manuales para leer el JSON que entra
+        // se usan getters
         boolean exito = handler.registerGamer(gamer.getNickname(), gamer.getPassword());
         if (exito) return "Registro Exitoso";
         else return "Error: El Nickname ya existe";

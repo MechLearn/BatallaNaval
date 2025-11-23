@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface GamerRepository extends JpaRepository<Gamer, Integer> {
 
-    // Spring crea el código de esto automáticamente
+
     Optional<Gamer> findByNickname(String nickname);
 }

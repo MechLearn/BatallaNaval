@@ -17,18 +17,18 @@ public class Gamer {
 
     private Boolean isGuest;
 
-    // 1. CONSTRUCTOR VACÍO (Obligatorio JPA)
+    //  CONSTRUCTOR VACÍO
     public Gamer() {
     }
 
-    // 2. CONSTRUCTOR CON DATOS
+    //  CONSTRUCTOR CON DATOS
     public Gamer(String nickname, String password, Boolean isGuest) {
         this.nickname = nickname;
         this.password = password;
         this.isGuest = isGuest;
     }
 
-    // 3. GETTERS Y SETTERS MANUALES
+    //  GETTERS Y SETTERS MANUALES
     public Integer getId() {
         return id;
     }

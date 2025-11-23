@@ -21,7 +21,7 @@ public class GamerHandler {
         if (repository.findByNickname(nickname).isPresent()) {
             return false; // Ya existe
         }
-        // Usamos el constructor manual
+        // se usa  el constructor manual
         Gamer newGamer = new Gamer(nickname, password, false);
         repository.save(newGamer);
         return true;

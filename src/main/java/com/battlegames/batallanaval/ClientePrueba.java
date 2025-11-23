@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ClientePrueba {
 
-    // Cambia "localhost" por la IP de tu compañero si lo prueban en red (ej: 192.168.1.50)
+    // Cambia "localhost" por la IP de un compañero (ej: 192.168.1.50)
     private static final String SERVER_URL = "http://localhost:8080/api/gamers";
 
     public static void main(String[] args) {
